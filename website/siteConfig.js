@@ -53,20 +53,14 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#fff',
+    primaryColor: '#2e8555',
     secondaryColor: '#076e37',
   },
-
-  // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.
     theme: 'default',
   },
-
-  // Add custom scripts here that would be placed in <script> tags.
-  scripts: ['https://buttons.github.io/buttons.js'],
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
