@@ -23,7 +23,7 @@ const users = [
 const siteConfig = {
   title: 'Mkbug.js', // Title for your website.
   tagline: 'A OOP style nodejs web framework base expressjs.',
-  url: 'https://mkbug.com', // Your website URL
+  url: 'https://doc.mkbug.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
   //   url: 'https://facebook.github.io',
@@ -49,28 +49,13 @@ const siteConfig = {
 
   /* path to images for header/footer */
   headerIcon: 'img/favicon.ico',
-  footerIcon: 'img/favicon.ico',
   favicon: 'img/favicon.ico',
 
   /* Colors for website */
   colors: {
-    primaryColor: '#0b9e4f',
+    primaryColor: '#fff',
     secondaryColor: '#076e37',
   },
-
-  /* Custom fonts for website */
-  /*
-  fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-  },
-  */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Your Name or Your Company Name`,
@@ -91,20 +76,6 @@ const siteConfig = {
   // Open Graph and Twitter card images.
   ogImage: 'img/undraw_online.svg',
   twitterImage: 'img/undraw_tweetstorm.svg',
-
-  // For sites with a sizable amount of content, set collapsible to true.
-  // Expand/collapse the links and subcategories under categories.
-  // docsSideNavCollapsible: true,
-
-  // Show documentation's last contributor's name.
-  // enableUpdateBy: true,
-
-  // Show documentation's last update time.
-  // enableUpdateTime: true,
-
-  // You may provide arbitrary config keys to be used as needed by your
-  // template. For example, if you need your repo's URL...
-  //   repoUrl: 'https://github.com/facebook/test-site',
 };
 
 module.exports = siteConfig;
