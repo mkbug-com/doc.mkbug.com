@@ -10,14 +10,14 @@
 
 const siteConfig = {
   title: 'Mkbug.js', // Title for your website.
-  tagline: 'A OOP style nodejs web framework base on express.js!',
-  desc: '一个基于Express.js封装的OOP风格的Restful api框架。',
+  tagline: 'A OOP style declare Nodejs framework base on Express.js！',
+  desc: '一个基于Express.js封装的OOP风格声明式Nodejs Restful api框架。',
   url: 'https://doc.mkbug.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
 
   headerLinks: [
     {doc: 'quick-start', label: 'Docs'},
-    {doc: 'doc4', label: 'API'},
+    {doc: 'base-controller', label: 'API'},
     {blog: true, label: 'Change Log'}
   ],
 

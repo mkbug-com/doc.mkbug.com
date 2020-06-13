@@ -1,6 +1,6 @@
 {
   "docs": {
     "Document": ["quick-start"],
-    "API": ["doc2"]
+    "API": ["base-controller"]
   }
 }

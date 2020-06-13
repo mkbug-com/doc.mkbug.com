@@ -3,23 +3,10 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A OOP style nodejs web framework base on express.js!",
+    "tagline": "A OOP style declare Nodejs framework base on Express.js！",
     "docs": {
-      "doc1": {
-        "title": "Latin-ish",
-        "sidebar_label": "Example Page"
-      },
-      "doc2": {
-        "title": "document number 2"
-      },
-      "doc3": {
-        "title": "This is document number 3"
-      },
-      "doc4": {
-        "title": "Other Document"
-      },
-      "doc5": {
-        "title": "Fifth Document"
+      "base-controller": {
+        "title": "BaseController"
       },
       "quick-start": {
         "title": "Quick Start"
@@ -28,13 +15,11 @@
     "links": {
       "Docs": "Docs",
       "API": "API",
-      "Help": "Help",
       "Change Log": "Change Log"
     },
     "categories": {
-      "Docusaurus": "Docusaurus",
-      "First Category": "First Category",
-      "Second Category": "Second Category"
+      "Document": "Document",
+      "API": "API"
     }
   },
   "pages-strings": {
