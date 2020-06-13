@@ -1,23 +1,30 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
- 
-/* your custom css */
-
-@media only screen and (min-device-width: 360px) and (max-device-width: 736px) {
+.navPusher > :first-child {
+    flex-grow: 1;
 }
 
-@media only screen and (min-width: 1024px) {
+.homepage_warp {
+  padding-top: 20%;
+  text-align: center;
 }
 
-@media only screen and (max-width: 1023px) {
+.homepage_warp .homepage_title {
+  font-size: 46px;
+  color: 000;
 }
 
-@media only screen and (min-width: 1400px) {
+.homepage_warp .homepage_desc {
+  font-size: 20px;
+  color: #333;
+  line-height: 36px;
 }
 
-@media only screen and (min-width: 1500px) {
+.homepage_warp .homepage_quickstart {
+  font-size: 26px;
+  color: #333;
+  border: 1px solid #e6e6e6;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 20px auto;
+  border-radius: 10px;
+  cursor: pointer;
 }

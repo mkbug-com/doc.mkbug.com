@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A OOP style nodejs web framework base expressjs.",
+    "tagline": "A OOP style nodejs web framework base on express.js!",
     "docs": {
       "doc1": {
         "title": "Latin-ish",
@@ -20,13 +20,16 @@
       },
       "doc5": {
         "title": "Fifth Document"
+      },
+      "quick-start": {
+        "title": "Quick Start"
       }
     },
     "links": {
       "Docs": "Docs",
       "API": "API",
       "Help": "Help",
-      "Blog": "Blog"
+      "Change Log": "Change Log"
     },
     "categories": {
       "Docusaurus": "Docusaurus",

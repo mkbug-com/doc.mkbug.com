@@ -10,26 +10,15 @@
 
 const siteConfig = {
   title: 'Mkbug.js', // Title for your website.
-  tagline: 'A OOP style nodejs web framework base expressjs.',
+  tagline: 'A OOP style nodejs web framework base on express.js!',
+  desc: '一个基于Express.js封装的OOP风格的Restful api框架。',
   url: 'https://doc.mkbug.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
-  // For github.io type URLs, you would set the url and baseUrl like:
-  //   url: 'https://facebook.github.io',
-  //   baseUrl: '/test-site/',
 
-  // Used for publishing and more
-  projectName: 'test-site',
-  organizationName: 'facebook',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
-
-  // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'Docs'},
+    {doc: 'quick-start', label: 'Docs'},
     {doc: 'doc4', label: 'API'},
-    {page: 'help', label: 'Help'},
-    {blog: true, label: 'Blog'},
+    {blog: true, label: 'Change Log'}
   ],
 
   /* path to images for header/footer */
@@ -38,8 +27,8 @@ const siteConfig = {
 
   /* Colors for website */
   colors: {
-    primaryColor: '#2e8555',
-    secondaryColor: '#076e37',
+    primaryColor: '#6e6e6e',
+    secondaryColor: '#e6e6e6',
   },
 
   highlight: {
@@ -50,11 +39,7 @@ const siteConfig = {
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
   // No .html extensions for paths.
-  cleanUrl: true,
-
-  // Open Graph and Twitter card images.
-  ogImage: 'img/undraw_online.svg',
-  twitterImage: 'img/undraw_tweetstorm.svg',
+  cleanUrl: true
 };
 
 module.exports = siteConfig;
