@@ -19,6 +19,7 @@ class Index extends React.Component {
       <div className="homepage_title">
         {config.title}
       </div>
+      <img className="homepage_logo" src='/img/favicon.ico'></img>
       <div className="homepage_desc">
         {config.tagline}
       </div>

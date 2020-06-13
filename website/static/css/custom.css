@@ -28,3 +28,8 @@
   border-radius: 10px;
   cursor: pointer;
 }
+
+.homepage_warp .homepage_logo {
+  width: 36px;
+  padding: 20px;
+}

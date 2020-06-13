@@ -7,30 +7,13 @@ A OOP style declare Nodejs Web framework base on Express.js
 ## 什么是Mkbug.js
 `Mkbug.js`是一个`OOP`风格声明式`Nodejs`框架。只需要声明并继承了对应接口的`Class`即可轻松的开发一个`Nodejs API`应用服务。
 
-## Mkbug.js VS Egg.js VS Thinkjs
-| 项目 | Mkbug.js | Egg.js | Think.js |
-| ---- | ---- | ---- | ---- |
-| Nodejs | Nodejs 10+ | Nodejs 8+ | Nodejs 6+ |
-| 底层框架 | Express.js | Koa.js | Koa.js |
-| 路由管理 | 自动 | 手动 | 自动 |
-| 逻辑层管理 | 自动 | 无 | 无 |
-| 数据层管理 | 自动 | 无 | 无 |
-| 插件管理 | 自动 | 手动 | 手动 |
-| 中间件管理 | 手动+自动 | 手动 | 手动 |
-| 配置信息管理 | 自动 | 无 | 无 |
-| JS扩展 | 原生 | 原生 | Babel |
-| 代码风格 | OOP声明式 | 原生 | 原生 |
-| 响应耗时 | 有 | 无 | 无 |
-| 页面渲染 | 兼容expressjs渲染中间件 | egg页面渲染中间件 | 兼容koa页面渲染中间件 |
-| 扩展能力 | 兼容expressjs中间件 | egg生态中间件 | 兼容koa页面渲染中间件 |
-| 维护团队 | 个人 | 阿里 | 个人 |
-
-## Hello World
-#### 通过npm安装Mkbugjs
+## 通过npm安装Mkbugjs
 ```sh
   // mkbug.js 需要依赖于expressjs和chalk。因此需要同时安装这两个依赖
   $ npm install mkbugjs express chalk -save
 ```
+
+## 第一个程序：Hello World
 #### 创建index.js（也可以叫其它名字）
 ```js
   const express = require('express');
