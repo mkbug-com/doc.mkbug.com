@@ -2,7 +2,8 @@
   "docs": {
     "Document": [
       "quick-start",
-      "introduction"
+      "introduction",
+      "controller"
     ],
     "API": ["base-controller"]
   }
