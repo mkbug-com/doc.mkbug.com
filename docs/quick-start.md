@@ -14,6 +14,7 @@ A OOP style declare Nodejs Web framework base on Express.js
 ```
 
 ## 第一个程序：Hello World
+所有的计算机编程技术，都是从这个`Hello World`开始的。当然`Mkbug.js`也不例外。
 #### 创建index.js（也可以叫其它名字）
 ```js
   const express = require('express');
@@ -23,7 +24,7 @@ A OOP style declare Nodejs Web framework base on Express.js
 
   new Mkbug(app)
     .create('/') // 请求url前缀
-    .start(3000, (err) => { // 启动，同app.listen
+    .start(3001, (err) => { // 启动，同app.listen
     if (!err)
       console.log('Server started!')
     else

@@ -9,6 +9,7 @@ sidebar_label: Introduction
 `Mkbug.js`通过`ES6`的`Class`提供了`OOP`风格的接口，且免配置路由，业务层，数据层，配置管理等企业级架构约束。帮助开发者快速建议易于维护的应用架构。通过`Plugin`机制实现对工具类的自动注入，以及中间件`BaseMiddleware`的抽象接口，使开发中间件和使用中间件的难度大大降低。
 
 使用风格上更容易被`Java`开发者和`PHP`开发者接受。
+> *Notice: 因为并不需要开发者自己手动去实例化这些类，因此`Mkbug.js`又称为声明式框架。*
 #### 较于`Egg.js`
 `Mkbug.js`与`Egg.js`区别很大，`Egg.js`是基于`Koa.js`进行了封装，并提供了自己强大的生态链，各种工具插件，可以帮助企业快速搭建`Nodejs`应用。而`Mkbug.js`并没有提供自己的生态，也不需要提供。`Mkbug.js`提供了完全兼容`Express.js`中间件的接口，且使用方法与之完全相同。其次`Express.js`的生态已经非常强大了，不需要我再造轮子了。
 
@@ -56,3 +57,10 @@ sidebar_label: Introduction
 > *Notice: 基于`Mkbug.js`的应用，并不需要自己配置路由，只要继承了`BaseController`即可自动生成路由。实现`BaseLogic`的类会自动被注入到`Controller`类中。通过`this.Logics`访问，也可以通过`this.getLogic`访问。当然同样`BaseModel`的实现类也会被自动注入到`Model`中。这样就对请求接入层，业务逻辑层，数据操作层进行了隔离与封装。易于后期维护。*
 
 ## 架构约束
+在`Mkbug.js`中，我们建议开发者通过继承`BaseController`，来设置路由，当然，由于`Mkbug.js`支持`Express.js`原始接口因此，开发人员也可以直接通过`app.use`去设置。
+
+但是并不建议开发者去那样用，`Mkbug.js`为开发者提供了更好的框架约束，通过`Mkbug.js`的构建能力，对各个模块进行隔离，去帮助开发者构建易于维护的应用结构。
+
+通过`BaseModel`去实现数据逻辑层的实现，会自动注入到继承了`BaseLogic`的对象中。也就是意味着开发者只能在逻辑层进行数据存储的操作。而不能直接在接入层(`Controller`)中直接操作数据。
+
+而通过`BaseLogic`去实现业务逻辑，作为请求接入层和数据逻辑层的中间媒介，这么做的好处第一是避免一个`Controller`过于复杂。满足单一职能原则。再者让我们的代码结构更加清晰，从而更易于维护。
