@@ -56,13 +56,15 @@ sidebar_label: Introduction
 ![](/img/at.png)
 > *Notice: 基于`Mkbug.js`的应用，并不需要自己配置路由，只要继承了`BaseController`即可自动生成路由。实现`BaseLogic`的类会自动被注入到`Controller`类中。通过`this.Logics`访问，也可以通过`this.getLogic`访问。当然同样`BaseModel`的实现类也会被自动注入到`Model`中。这样就对请求接入层，业务逻辑层，数据操作层进行了隔离与封装。易于后期维护。*
 
-## 其它
+## 对外接口
 在`Mkbug.js`中，我们建议开发者通过继承`BaseController`，来设置路由，当然，由于`Mkbug.js`支持`Express.js`原始接口因此，开发人员也可以直接通过`app.use`去设置。
 
 但是并不建议开发者去那样用，`Mkbug.js`为开发者提供了更好的框架约束，通过`Mkbug.js`的构建能力，对各个模块进行隔离，去帮助开发者构建易于维护的应用结构。
 
+### 业务逻辑
 通过`BaseModel`去实现数据逻辑层的实现，会自动注入到继承了`BaseLogic`的对象中。也就是意味着开发者只能在逻辑层进行数据存储的操作。而不能直接在接入层(`Controller`)中直接操作数据。
 
+### 数据操作
 而通过`BaseLogic`去实现业务逻辑，作为请求接入层和数据逻辑层的中间媒介，这么做的好处第一是避免一个`Controller`过于复杂。满足单一职能原则。再者让我们的代码结构更加清晰，从而更易于维护。
 
 ### 中间件

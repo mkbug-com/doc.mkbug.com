@@ -3,6 +3,7 @@
     "Document": [
       "quick-start",
       "introduction",
+      "mkbug",
       "controller"
     ],
     "API": ["base-controller"]

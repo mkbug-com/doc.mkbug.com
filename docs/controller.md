@@ -24,17 +24,19 @@ title: Router Controller
 ![](/img/router-controller1.png)
 
 我们可以清楚的看到`Mkbug.js`帮助我们生成了一个接口名字叫`/helloworld`。通过浏览器访问可以看到以下结果：
+
 ![](/img/router-controller2.png)
+
 这个时候服务器端会产生日志，基本的日志信息包含请求响应时长，返回状态和访问路径：
 ![](/img/router-controller3.png)
 
-> 我们有两种方式修改日志输出格式，第一种：自己实现`BaseController`的`after`接口。第二种方法，实现一个继承至`BaseController`的基类，然后所有路由接入层`Controller`都继承至这个新的基类。
-> 类的方法名必须以`HTTP`协议的`Methods`名开头，`Action`结尾，这样才会被识别为路由信息，具体信息见后面
+> *Notice：我们有两种方式修改日志输出格式，第一种：自己实现`BaseController`的`after`接口。第二种方法，实现一个继承至`BaseController`的基类，然后所有路由接入层`Controller`都继承至这个新的基类。*
+> *Notice：类的方法名必须以`HTTP`协议的`Methods`名开头，`Action`结尾，这样才会被识别为路由信息，具体信息见后面。*
 
 ## 请求接入层
 `Mkbug.js`通过目录名，类名和方法名生成`API`路由信息，并为开发者提供了多种路由生成方案，可以满足绝大多数对路由规则不同的需求。
 
-> 由于`URI`是不区分大小写的，因此所有的路由信息都会转为小写地址。
+> *Notice：由于`URI`是不区分大小写的，因此所有的路由信息都会转为小写地址。*
 
 ### 目录名和类名生成路由规则
 对于`URI`通常存在带参`URI`和不带参`URI`。而`Mkbug.js`则使用目前较为流行的规则即以`_`开头的会被生成为带参路由。如下：
@@ -60,7 +62,9 @@ title: Router Controller
 ![](/img/router-controller4.png)
 
 浏览器请求结果：
+
 ![](/img/router-controller5.png)
+
 
 ### 文件名生成路由规则
 通常情况下，文件名是被忽略的。而是以类名去生成路由信息，这可以满足绝大多数情况的需求，但是某些情况下，可能这个模块下只需要一个`Controller`就够了。显然，创建一个目录是不必的。因此`Mkbug.js`在发现文件名以`_`开头的时候会作为带参路由的一部分配置到路由中。
@@ -97,17 +101,19 @@ title: Router Controller
 ![](/img/router-controller6.png)
 
 浏览器请求结果：
+
 ![](/img/router-controller7.png)
 
 我们看到`src/controller/pathtest/index.js`的文件名并不在路由信息中，这是因为`Mkbug.js`是通常情况下忽略文件名，而是以类名为路由信息的。
+
 ![](/img/router-controller8.png)
 
 ### 类方法名生成规则
 在上例中，我们看到`src/controller/pathtest/index.js`中实现的方法名为`getTestAction`，而生成的路由信息也变成了`http://localhost:3001/pathtest/HelloWorld/test`。
 
-这是因为`Controller`的方法名是非常关键的配置信息，类的方法名必须以`HTTP`协议的`Methods`名开头`Action`结尾，这样才会被识别为路由信息。
+> *Notice：因为`Controller`的方法名是非常关键的配置信息，类的方法名必须以`HTTP`协议的`Methods`名开头`Action`结尾，这样才会被识别为路由信息。如果在`Methods`和`Action`之间没有其它单词，则没有对应的路径。就像上面的例子一样。*
 
-> `http`协议目前支持9个方法，当然，实际上不同浏览器还有更多的方法。但是为了保持与标准同步，`Mkbug.js`支持9种方法，分别是：`GET`,`HEAD`,`POST`,`PUT`,`DELETE`,`CONNECT`,'`OPTIONS`,`TRACE`,`PATCH`
+> *Notice：`http`协议目前支持9个方法，当然，实际上不同浏览器还有更多的方法。但是为了保持与标准同步，`Mkbug.js`支持9种方法，分别是：`GET`,`HEAD`,`POST`,`PUT`,`DELETE`,`CONNECT`,'`OPTIONS`,`TRACE`,`PATCH`。*
 
 比如:
 ```js
@@ -160,7 +166,7 @@ title: Router Controller
 运行日志会记录产生的路由信息：
 ![](/img/router-controller9.png)
 
-> 通过`CURL`工具可以拿到对应的返回信息，这里就不一一列举了。当然有一些方法是不会有返回值的。所以即使你返回了信息也拿不到，比如`HEAD`。
+> *Notice：通过`CURL`工具可以拿到对应的返回信息，这里就不一一列举了。当然有一些方法是不会有返回值的。所以即使你返回了信息也拿不到，比如`HEAD`。*
 
 ## 返回请求响应
 
@@ -217,10 +223,62 @@ title: Router Controller
 
 执行结果如下：
 ```sh
-  $ curl -H "Content-Type:application/json" -XPOST http://localhost:3001/paramsData/test?id=queryData -d '{"id":"bodyData"}'
+  $ curl -H "Content-Type:application/json" \
+  -XPOST http://localhost:3001/paramsData/test?id=queryData \
+  -d '{"id":"bodyData"}'
+  
   postTestAction Query.id = queryData Params.id = paramsData Body.id = bodyData
+```
+
+### 响应类型
+`Mkbug.js`为开发者提供了`this.type`接口，用于设置返回的数据类型，通过设置`this.type`就会改变`headers`的`content-type`从而让浏览器以对应的方式处理返回内容，下面是一个文件下载的例子：
+```js
+  // src/controller/_id.js
+  const { BaseController } = require('mkbugjs');
+  const fs = require('fs');
+
+  module.exports = class file extends BaseController {
+    getTestAction () {
+      this.type = 'application/octet-stream'
+      // 返回启动文件index.js内容
+      return fs.readFileSync('./index.js') 
+    }
+  }
+```
+执行结果如下：
+```sh
+  $ curl -XGET -v localhost:3001/file/test
+
+  Note: Unnecessary use of -X or --request, GET is already inferred.
+  *   Trying ::1...
+  * TCP_NODELAY set
+  * Connected to localhost (::1) port 3001 (#0)
+  > GET /file/test HTTP/1.1
+  > Host: localhost:3001
+  > User-Agent: curl/7.64.1
+  > Accept: */*
+  > 
+  < HTTP/1.1 200 OK
+  < X-Powered-By: Express
+  < Content-Type: application/octet-stream
+  < Date: Sat, 20 Jun 2020 09:10:24 GMT
+  < Connection: keep-alive
+  < Content-Length: 281
+  < 
+  const express = require('express');
+  const bodyParser = require('body-parser');
+  const app = express();
+
+  const { Mkbug } = require('mkbugjs');
+
+  new Mkbug(app)
+    .create('/') // 请求url前缀
+    .use(bodyParser.urlencoded({ extended: true }))
+    .use(bodyParser.json())
+    .start(3001)* Closing connection 0
 ```
 
 ### 高级接口
 为了满足高级开发人员的特殊需求，`Mkbug.js`直接暴露了`Express.js`的`req`和`res`接口满足开发者的更高级需求。
 
+> *Notice: 是不是用`Mkbug.js`使开发变得简单了许多？*
