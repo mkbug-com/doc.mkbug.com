@@ -15,7 +15,7 @@ A OOP style declare Nodejs Web framework base on Express.js
 
 ## 第一个程序：Hello World
 所有的计算机编程技术，都是从这个`Hello World`开始的。当然`Mkbug.js`也不例外。
-#### 创建index.js（也可以叫其它名字）
+### 创建index.js（也可以叫其它名字）
 ```js
   const express = require('express');
   const app = express();
@@ -24,6 +24,7 @@ A OOP style declare Nodejs Web framework base on Express.js
 
   new Mkbug(app)
     .create('/') // 请求url前缀
+    .use(bodyParser.json()) // 使用express中间件
     .start(3001, (err) => { // 启动，同app.listen
     if (!err)
       console.log('Server started!')
@@ -31,12 +32,13 @@ A OOP style declare Nodejs Web framework base on Express.js
       console.error('Server start failed!')
   })
 ```
-#### 执行结果
+> *`Notice`：`Mkbugjs`提供了对`Express.js`现有中间件的完全支持。*
+### 执行结果
 ![](/img/start1.png)
 
 > *`Notice`：`Mkbugjs`是默认取`src`目录的代码生成对应的`Controller`，因此我们下一步就是创建一个`Controller`.*
 
-#### 创建第一个Controller
+### 创建第一个Controller
 我们只需要在`src/controller`目录下创建一个`index.js`文件并继承`BaseController`类。
 ```js
   // src/controller/index.js
@@ -48,7 +50,7 @@ A OOP style declare Nodejs Web framework base on Express.js
     }
   }
 ```
-#### 执行结果
+### 执行结果
 ![](/img/start2.png)
 
 > *Notice：`BaseController`是`Mkbugjs`最基本的类，任何在`src/controller`目录下，并继承`BaseController`的类均会自动生成对应的接口.*
