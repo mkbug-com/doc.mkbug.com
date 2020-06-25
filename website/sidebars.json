@@ -4,7 +4,8 @@
       "quick-start",
       "introduction",
       "mkbug",
-      "controller"
+      "controller",
+      "config"
     ],
     "API": ["base-controller"]
   }
