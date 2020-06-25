@@ -24,8 +24,10 @@ title: Router Controller
 ![](/img/router-controller1.png)
 
 我们可以清楚的看到`Mkbug.js`帮助我们生成了一个接口名字叫`/helloworld`。通过浏览器访问可以看到以下结果：
-
-![](/img/router-controller2.png)
+```js
+  $ curl -XGET http://localhost:3001/helloworld
+  Hello World
+```
 
 这个时候服务器端会产生日志，基本的日志信息包含请求响应时长，返回状态和访问路径：
 ![](/img/router-controller3.png)
@@ -62,8 +64,10 @@ title: Router Controller
 ![](/img/router-controller4.png)
 
 浏览器请求结果：
-
-![](/img/router-controller5.png)
+```js
+  $ curl -XGET http://localhost:3001/helloworld/paramstest1
+  Hello World
+```
 
 
 ### 文件名生成路由规则
@@ -101,12 +105,16 @@ title: Router Controller
 ![](/img/router-controller6.png)
 
 浏览器请求结果：
-
-![](/img/router-controller7.png)
+```js
+  $ curl -XGET http://localhost:3001/helloworld/idtest
+  Hello ! this message from IdTest
+```
 
 我们看到`src/controller/pathtest/index.js`的文件名并不在路由信息中，这是因为`Mkbug.js`是通常情况下忽略文件名，而是以类名为路由信息的。
-
-![](/img/router-controller8.png)
+```js
+  $ curl -XGET http://localhost:3001/pathtest/helloworld/test
+  Hello! this message from pathtest/hellowrold!
+```
 
 ### 类方法名生成规则
 在上例中，我们看到`src/controller/pathtest/index.js`中实现的方法名为`getTestAction`，而生成的路由信息也变成了`http://localhost:3001/pathtest/HelloWorld/test`。
