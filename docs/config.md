@@ -13,9 +13,9 @@ title: Config
   ├── src 
       ├── controller 
           ├── index.js
-          ├── index.[process.env.NODE_ENV].js
       ├── config
           ├── index.conf
+          ├── index.[process.env.NODE_ENV].conf
   ├── index.js 
 
   // src/config/index.conf
@@ -23,7 +23,6 @@ title: Config
 
   // src/controller/index.js
   const { BaseController, Config } = require('mkbugjs');
-  const fs = require('fs');
 
   module.exports = class ConfigTest extends BaseController {
     getAction () {
@@ -63,7 +62,6 @@ title: Config
 
   // src/controller/index.js
   const { BaseController, Config } = require('mkbugjs');
-  const fs = require('fs');
 
   module.exports = class ConfigTest extends BaseController {
     getAction () {
@@ -108,7 +106,6 @@ title: Config
 
   // src/controller/index.js
   const { BaseController, Config } = require('mkbugjs');
-  const fs = require('fs');
 
   module.exports = class ConfigTest extends BaseController {
     getAction () {
