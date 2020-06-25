@@ -6,7 +6,6 @@
       "mkbug",
       "controller",
       "config"
-    ],
-    "API": ["base-controller"]
+    ]
   }
 }

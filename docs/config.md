@@ -44,9 +44,9 @@ title: Config
       ├── controller 
           ├── index.js
       ├── config
-          ├── index.conf
-          ├── index.dev.conf
-          ├── index.prod.conf
+          ├── index.conf // 基础配置信息
+          ├── index.dev.conf // `process.env.NODE_ENV = dev`环境下的配置信息
+          ├── index.prod.conf // `process.env.NODE_ENV = prod`环境下的配置信息
   ├── index.js 
 
   // src/config/index.conf
@@ -98,9 +98,10 @@ title: Config
 
   // src/config/index.conf
   TITLE=Mkbug.js
+  Content=A OOP style declare Nodejs Web framework base on Express.js
 
   // src/config/index.dev.conf
-  Content=A OOP style declare Nodejs Web framework base on Express.js
+  TITLE=Mkbug.js DEV
 
   // src/controller/index.js
   const { BaseController, Config } = require('mkbugjs');
@@ -117,7 +118,7 @@ title: Config
 当我们以`process.env.NODE_ENV=dev`启动的时候，使用`curl`请求接口返回的数据我们发现，在特定环境下的配置信息会继承没有指定环境的配置信息。
 ```js
   $ curl -XGET http://localhost:3001/api/configtest
-  {"TITLE":"Mkbug.js","Content":"A OOP style declare Nodejs Web framework base on Express.js"}
+  {"TITLE":"Mkbug.js DEV","Content":"A OOP style declare Nodejs Web framework base on Express.js"}
 ```
 
 > *Notice：当我们没有指定具体的运行环境的时候，`Config`会默认加载与初始化参数名相同的`conf`文件，比如`index.js`。但是当指定具体的环境（也就是`process.env.NODE_ENV`）后，将会用对应环境下的同名配置文件内容对默认配置内容进行覆盖。*
