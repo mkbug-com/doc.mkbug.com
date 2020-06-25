@@ -11,6 +11,7 @@ title: Config
   ├── src 
       ├── controller 
           ├── index.js
+          ├── index.[process.env.NODE_ENV].js
       ├── config
           ├── index.conf
   ├── index.js 
@@ -24,7 +25,7 @@ title: Config
 
   module.exports = class ConfigTest extends BaseController {
     getAction () {
-      const conf = new Config('index')
+      const conf = new Config('index') // 指定读取的配置名
       return conf
     }
   }
@@ -84,7 +85,7 @@ title: Config
 
 > *Notice：我们可以通过`process.env.NODE_ENV`来控制`Config`加载的配置信息。因此使用起来非常方便。*
 
-## 信息的继承
+## 配置信息的继承
 通常我们一个系统会有多种配置信息，但是不同环境下配置信息有的是完全一样的。那么我们需要在不同环境配置文件重复配置么？答案是不需要。通过前面的例子我们可以清楚的看到指定环境下的配置信息会覆盖基础配置信息。而没有覆盖的部分就会继承下来。比如下面：
 ```js
   // 目录结构

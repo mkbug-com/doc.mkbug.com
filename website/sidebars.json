@@ -5,7 +5,8 @@
       "introduction",
       "mkbug",
       "controller",
-      "config"
+      "config",
+      "plugin"
     ]
   }
 }
