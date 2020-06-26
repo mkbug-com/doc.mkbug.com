@@ -17,7 +17,8 @@
       "base-model",
       "base-util",
       "base-middleware",
-      "base-config"
+      "base-config",
+      "base-mkbugerror"
     ]
   }
 }

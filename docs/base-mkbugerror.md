@@ -1,15 +1,16 @@
 ---
-id: base-util
-title: 接口 BaseUtil
+id: base-mkbugerror
+title: 类型 MkbugError
 ---
-工具类的基础类。
+`Mkbug.js`内部异常抽象，可以被转化为请求的响应。
 
-## 接口 BaseUtil
-接入层的抽象接口
+## 方法 MkbugError()
+异常构造函数
 ### 参数
 | 参数 | 说明 | 类型 | 必填 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
-| 无 | 无 | 无 | 无 | 无 |
+| `status` | 请求响应的`HTTP CODE` | `Number` | 必填 | `200` |
+| `responseBody` | 请求响应的信息 | `String` | 必填 | ` ` |
 ### 返回
 无
 
@@ -21,3 +22,4 @@ title: 接口 BaseUtil
 | 无 | 无 | 无 | 无 | 无 |
 ### 返回
 无
+
