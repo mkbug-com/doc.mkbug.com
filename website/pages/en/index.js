@@ -23,6 +23,9 @@ class Index extends React.Component {
       <div className="homepage_desc">
         {config.tagline}
       </div>
+      <div className="homepage_desc">
+        {config.tagline_cn}
+      </div>
       <a className="homepage_quickstart" href={docUrl('quick-start.html')}>
         Quick Start
       </a>

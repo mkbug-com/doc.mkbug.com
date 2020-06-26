@@ -23,6 +23,7 @@ const users = [
 const siteConfig = {
   title: 'Mkbug.js', // Title for your website.
   tagline: 'A OOP style declare Nodejs framework base on Express.js！',
+  tagline_cn: '一款基于 Express.js 的面向对象风格声明式 Nodejs Web 框架！',
   url: 'https://doc.mkbug.com', // Your website URL
   baseUrl: '/', // Base URL for your project */
   // For github.io type URLs, you would set the url and baseUrl like:
