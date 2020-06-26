@@ -30,8 +30,8 @@ const siteConfig = {
   //   baseUrl: '/test-site/',
 
   // Used for publishing and more
-  projectName: 'Mkbug.com',
-  organizationName: 'ryouaki',
+  projectName: 'doc.mkbug.com',
+  organizationName: 'mkbug',
   // For top-level user or org sites, the organization is still the same.
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
@@ -40,8 +40,6 @@ const siteConfig = {
   headerLinks: [
     {doc: 'quick-start', label: 'Docs'},
     {doc: 'base-controller', label: 'API'},
-    {blog: true, label: 'Change Log'},
-    { languages: true },
     {link: 'https://github.com/mkbug-com/mkbug.js', label: 'Github'}
   ],
 
