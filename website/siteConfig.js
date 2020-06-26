@@ -39,7 +39,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     {doc: 'quick-start', label: 'Docs'},
-    {doc: 'base-controller', label: 'API'},
+    {doc: 'base-mkbug', label: 'API'},
     {href: 'https://github.com/mkbug-com/mkbug.js', label: 'Github'}
   ],
 

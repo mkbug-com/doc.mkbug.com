@@ -11,7 +11,13 @@
       "model"
     ],
     "API": [
-      "base-controller"
+      "base-mkbug",
+      "base-controller",
+      "base-logic",
+      "base-model",
+      "base-util",
+      "base-middleware",
+      "base-config"
     ]
   }
 }
