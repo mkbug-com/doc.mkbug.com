@@ -7,7 +7,7 @@
       "controller",
       "config",
       "plugin",
-      "id-logic",
+      "logic",
       "model"
     ],
     "API": [
