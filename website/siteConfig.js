@@ -40,7 +40,7 @@ const siteConfig = {
   headerLinks: [
     {doc: 'quick-start', label: 'Docs'},
     {doc: 'base-controller', label: 'API'},
-    {link: 'https://github.com/mkbug-com/mkbug.js', label: 'Github'}
+    {href: 'https://github.com/mkbug-com/mkbug.js', label: 'Github'}
   ],
 
   /* path to images for header/footer */
