@@ -62,7 +62,7 @@ const siteConfig = {
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
-    'js/baidu.js'
+    '//http://doc.mkbug.com/js/baidu.js'
   ],
 
   // On page navigation for the current documentation page.
