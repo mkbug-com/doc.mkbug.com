@@ -6,7 +6,12 @@
       "mkbug",
       "controller",
       "config",
-      "plugin"
+      "plugin",
+      "id-logic",
+      "model"
+    ],
+    "API": [
+      "base-controller"
     ]
   }
 }

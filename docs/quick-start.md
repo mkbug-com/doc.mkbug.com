@@ -1,6 +1,6 @@
 ---
 id: quick-start
-title: Quick Start
+title: 快速开始
 ---
 A OOP style declare Nodejs Web framework base on Express.js
 

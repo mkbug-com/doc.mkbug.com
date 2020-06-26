@@ -1,5 +1,5 @@
 ---
 id: base-controller
-title: BaseController
+title: 接口 BaseController
 ---
 待续

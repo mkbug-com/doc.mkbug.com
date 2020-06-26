@@ -1,6 +1,6 @@
 ---
 id: controller
-title: Router Controller
+title: 路由 Controller
 ---
 在`Mkbug.js`中为开发者提供了非常强大的路由接入层管理工具，只要继承`BaseController`即可自动帮助开发者生成路由，并支持多种不同方式满足开发者对不同类型`URI`的需要。同时为开发者提供拦截器，以及响应时长计算。方便开发者对请求接入的管理。
 

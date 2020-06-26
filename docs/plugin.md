@@ -1,6 +1,6 @@
 ---
 id: plugin
-title: Plugin
+title: 插件 Plugin
 ---
 `Mkbug.js`主要提供了两个类型的`Plugin`，一种是工具类`BaseUtil`，主要用于帮助开发者使用`OOP`声明式风格去管理工具函数。另一种是`BaseMiddleware`,即中间件，由于开发`Express.js`需要对高阶函数，闭包，请求上下文还是有一定要求的。所以，`BaseMiddleware`对其进行了封装，降低中间件的开发难度，抛出`MkbugError`会自动返回。
 

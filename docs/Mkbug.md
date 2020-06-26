@@ -1,6 +1,6 @@
 ---
 id: mkbug
-title: Mkbug
+title: 应用 Mkbug
 ---
 `Mkbug.js`为开发者提供了统一的`OOP`风格的启动入口，并且暴露了`Express.js`底层接口，开发者可以很容易的使用。
 

@@ -1,7 +1,6 @@
 ---
 id: introduction
-title: Introduction
-sidebar_label: Introduction
+title: Mkbug.js介绍
 ---
 `Mkbug.js`提供多种接口来帮助开发者快速进行`Nodejs Web`应用的快速开发，基于`Express.js`成熟稳定的底层实现。使之可以成为企业级应用技术选型的选择之一。
 

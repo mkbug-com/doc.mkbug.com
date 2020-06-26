@@ -1,6 +1,6 @@
 ---
 id: config
-title: Config
+title: 配置 Config
 ---
 在`Mkbug.js`中为开发者提供了非常强大的配置信息管理接口。只需要在指定目录下创建`conf`文件，即可通过`Config`类将其转化为对象。供系统使用。
 
