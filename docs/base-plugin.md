@@ -1,10 +1,10 @@
 ---
-id: base-middleware
-title: 接口 BaseMiddleware
+id: base-plugin
+title: 接口 BasePlugin
 ---
 `Mkbug.js`对于`Express.js`中间件的抽象。
 
-## 方法 BaseMiddleware()
+## 方法 BasePlugin()
 中间件的抽象接口
 ### 参数
 | 参数 | 说明 | 类型 | 必填 | 默认值 |

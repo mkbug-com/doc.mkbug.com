@@ -2,7 +2,7 @@
 id: plugin
 title: 插件 Plugin
 ---
-`Mkbug.js`主要提供了两个类型的`Plugin`，一种是工具类`BaseUtil`，主要用于帮助开发者使用`OOP`声明式风格去管理工具函数。另一种是`BaseMiddleware`,即中间件，由于开发`Express.js`需要对高阶函数，闭包，请求上下文还是有一定要求的。所以，`BaseMiddleware`对其进行了封装，降低中间件的开发难度，抛出`MkbugError`会自动返回。
+`Mkbug.js`主要提供了两个类型的`Plugin`，一种是工具类`BaseUtil`，主要用于帮助开发者使用`OOP`声明式风格去管理工具函数。另一种是`BasePlugin`,即中间件，由于开发`Express.js`需要对高阶函数，闭包，请求上下文还是有一定要求的。所以，`BasePlugin`对其进行了封装，降低中间件的开发难度，抛出`MkbugError`会自动返回。
 
 > *Notice：`Express.js`和`Koa.js`有一点不同，且让开发者头疼的事情，就是必须要显示的响应用户请求，否则客户端连接会一直挂起。这也是很多初学者容易造成的错误。而`Mkbug.js`在路由层和中间件层都进行了处理，让开发者忽略这些开发细节。全身心投入到业务开发中去，同时也提供了高级接口，开发者也可以开发更高级的中间件。*
 
@@ -104,9 +104,9 @@ title: 插件 Plugin
 > *Notice：为了避免开发者因为自动注入忘记了对应的工具类对象的访问路径，在`Mkbug.js`的日志中都清晰的显示了所有注入内容，方便开发者进行开发。*
 
 ## 中间件类`Plugin`
-`Mkbug.js`会默认从`src/plugin`扫描继承于`BaseMiddleware`的插件并自动设置成中间件，并作用于当前的跟路径。
+`Mkbug.js`会默认从`src/plugin`扫描继承于`BasePlugin`的插件并自动设置成中间件，并作用于当前的跟路径。
 
-`BaseMiddleware`提供一个`exec`接口，该接口主要用于实现中间件的业务逻辑，并提供了`res`和`req`接口。当我们需要拦截请求，只需要抛出`MkbugError`异常即可。否则会执行下一步路由。
+`BasePlugin`提供一个`exec`接口，该接口主要用于实现中间件的业务逻辑，并提供了`res`和`req`接口。当我们需要拦截请求，只需要抛出`MkbugError`异常即可。否则会执行下一步路由。
 
 ```js
   // 目录结构
@@ -120,9 +120,9 @@ title: 插件 Plugin
   ├── index.js 
 
   // src/plugin/index.js
-  const { BaseMiddleware, MkbugError } = require('mkbugjs');
+  const { BasePlugin, MkbugError } = require('mkbugjs');
 
-  module.exports = class TestMiddleware1 extends BaseMiddleware {
+  module.exports = class TestMiddleware1 extends BasePlugin {
     exec (req, res) {
       if (req.query.test === '1') {
         throw new MkbugError(200, 'Reject from TestMiddleware1')
@@ -131,9 +131,9 @@ title: 插件 Plugin
   }
 
   // src/plugin/index1.js
-  const { BaseMiddleware, MkbugError } = require('mkbugjs');
+  const { BasePlugin, MkbugError } = require('mkbugjs');
 
-  module.exports = class TestMiddleware2 extends BaseMiddleware {
+  module.exports = class TestMiddleware2 extends BasePlugin {
     exec (req, res) {
       if (req.query.test === '2') {
         throw new MkbugError(401, 'Reject from TestMiddleware2')
@@ -142,9 +142,9 @@ title: 插件 Plugin
   }
 
   // src/plugin/index3.js
-  const { BaseMiddleware } = require('mkbugjs');
+  const { BasePlugin } = require('mkbugjs');
 
-  module.exports = class TestMiddleware3 extends BaseMiddleware {
+  module.exports = class TestMiddleware3 extends BasePlugin {
     exec (req, res) {
       console.log('Reject from TestMiddleware3')
     }

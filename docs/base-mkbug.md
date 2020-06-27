@@ -28,7 +28,7 @@ title: 类型 Mkbug
 ### 参数
 | 参数 | 说明 | 类型 | 必填 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
-| `middleware` | `Express.js`中间件 | `String` | 非必填 | 无 |
+| `plugin` | `Express.js`中间件 | `String` | 非必填 | 无 |
 ### 返回
 `Mkbug`: 当前应用的实例
 

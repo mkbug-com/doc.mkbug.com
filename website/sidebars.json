@@ -16,7 +16,7 @@
       "base-logic",
       "base-model",
       "base-util",
-      "base-middleware",
+      "base-plugin",
       "base-config",
       "base-mkbugerror"
     ]
