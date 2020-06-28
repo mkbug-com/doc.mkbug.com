@@ -4,7 +4,7 @@ title: 路由 Controller
 ---
 在`Mkbug.js`中为开发者提供了非常强大的路由接入层管理工具，只要继承`BaseController`即可自动帮助开发者生成路由，并支持多种不同方式满足开发者对不同类型`URI`的需要。同时为开发者提供拦截器，以及响应时长计算。方便开发者对请求接入的管理。
 
-> *Notice：`BaseController`模块期初只是为了满足部分`PHP`和`Java`开发人员的需要，但是当时早在2018年，`Nodejs`对新语法的支持还不是很好。到2019年初才正式应用于项目，大大降低了路由管理的工作量，并提供了`PHP`和`Java`非常熟悉的`OOP`声明式风格。*
+> *Notice：`BaseController`模块期初只是为了帮助团队内的`PHP`和`Java`开发人员更容易专向`Nodejs`，但是当时早在2018年，`Nodejs`对新语法的支持还不是很好。到2019年初才正式应用于项目，大大降低了路由管理的工作量，并提供了`PHP`和`Java`非常熟悉和喜欢的`OOP`声明式风格。*
 
 ## BaseController
 `BaseController`是`Mkbug.js`最为核心的基本接口，用于生成请求接入路由和提供对路由进行基本的控制。帮助开发者更好的管理接入层路由信息，避免混乱和出错。
@@ -12,7 +12,7 @@ title: 路由 Controller
 ## 如何使用`BaseController`？
 最简单的办法就是在`src`目录的`controller`目录创建一个`JS`文件，定义一个类，并继承至`BaseController`:
 ```js
-  // src/controller/xxx.js
+  // src/controller/HelloWorld.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class HelloWorld extends BaseController {
@@ -72,8 +72,8 @@ title: 路由 Controller
 ```
 
 
-### 文件名生成路由规则
-通常情况下，文件名是被忽略的。而是以类名去生成路由信息，这可以满足绝大多数情况的需求，但是某些情况下，可能这个模块下只需要一个`Controller`就够了。显然，创建一个目录是不必的。因此`Mkbug.js`在发现文件名以`_`开头的时候会作为带参路由的一部分配置到路由中。
+### 路由生成规则
+通常情况下，是以文件名生成路由信息，这可以满足绝大多数情况的需求，但是某些情况下，可能这个模块下只需要一个`Controller`就够了。显然，创建一个目录是不必的。因此`Mkbug.js`在发现文件名以`_`开头的时候会作为带参路由的一部分配置到路由中。
 
 ```js
   // 目录结构
@@ -94,7 +94,7 @@ title: 路由 Controller
       return 'Hello ! this message from IdTest';
     }
   }
-  // src/controller/pathtest/index.js
+  // src/controller/pathtest/HelloWorld.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class HelloWorld extends BaseController {

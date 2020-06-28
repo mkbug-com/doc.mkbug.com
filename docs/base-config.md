@@ -10,7 +10,7 @@ title: 类型 Config
 | 参数 | 说明 | 类型 | 必填 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
 | `name` | 配置名，`*。conf`文件名 | `String` | 必填 | 无 |
-| `opts` | 初始化参数，编码格式 | `Object` | 非必填 | `{ encoding: 'utf8' }` |
+| `opts` | 初始化参数，编码格式 | `Object` | 非必填 | `{ encoding: 'utf8', path: './src' }` |
 ### 返回
 `Object`: `*.conf`文件映射的键值对对象
 

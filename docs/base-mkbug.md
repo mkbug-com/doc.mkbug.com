@@ -23,6 +23,8 @@ title: 类型 Mkbug
 ### 返回
 `Mkbug`: 当前应用的实例
 
+> *Notice：`create`的调用顺序和`use`的调用顺序直接关系到中间件和路由的执行顺序，和`Express.js`中是一样的。*
+
 ## 方法 use()
 暴露`Express.js`的`use`接口
 ### 参数
@@ -31,6 +33,9 @@ title: 类型 Mkbug
 | `plugin` | `Express.js`中间件 | `String` | 非必填 | 无 |
 ### 返回
 `Mkbug`: 当前应用的实例
+
+> *Notice：`create`的调用顺序和`use`的调用顺序直接关系到中间件和路由的执行顺序，和`Express.js`中是一样的。*
+
 
 ### 方法 start()
 启动服务

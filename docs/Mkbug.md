@@ -57,10 +57,11 @@ title: 应用 Mkbug
   const { Mkbug } = require('mkbugjs');
 
   new Mkbug(app)
-    .create('/api') // 请求url前缀
     .use(bodyParser.urlencoded({ extended: true }))
     .use(bodyParser.json())
+    .create('/api') // 请求url前缀
     .start(3001)
 ```
+> *Notice：`create`实际上是生成路由配置信息的过程，因此在使用`use`接口和`create`接口直接决定中间件的执行顺序。*
 
 > *Notice：是不是非常简单？*

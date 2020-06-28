@@ -55,6 +55,8 @@ A OOP style declare Nodejs Web framework base on Express.js
 
 > *Notice：`BaseController`是`Mkbugjs`最基本的类，任何在`src/controller`目录下，并继承`BaseController`的类均会自动生成对应的接口.*
 
-![](/img/start3.png)
-
+```
+  $ curl http://localhost:3000/helloworld
+  Hello World
+```
 > *Notice：`Mkbugjs`提供了丰富的`Web`服务器常用的类。只需要继承并实现对应的类，即可实现自动注入。就像`Java`流行的`Spring Boot`或者`PHP`的`Thinkphp`一样。非常简单。*

@@ -10,7 +10,7 @@ title: 类型 MkbugError
 | 参数 | 说明 | 类型 | 必填 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |
 | `status` | 请求响应的`HTTP CODE` | `Number` | 必填 | `200` |
-| `responseBody` | 请求响应的信息 | `String` | 必填 | ` ` |
+| `responseBody` | 请求响应的信息 | `String|Object` | 必填 | ` ` |
 ### 返回
 无
 

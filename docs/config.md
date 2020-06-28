@@ -12,7 +12,7 @@ title: 配置 Config
   // 目录结构
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── ConfigTest.js
       ├── config
           ├── index.conf
           ├── index.[process.env.NODE_ENV].conf
@@ -21,7 +21,7 @@ title: 配置 Config
   // src/config/index.conf
   TITLE=Mkbug.js
 
-  // src/controller/index.js
+  // src/controller/ConfigTest.js
   const { BaseController, Config } = require('mkbugjs');
 
   module.exports = class ConfigTest extends BaseController {
@@ -44,7 +44,7 @@ title: 配置 Config
   // 目录结构
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── ConfigTest.js
       ├── config
           ├── index.conf // 基础配置信息
           ├── index.dev.conf // `process.env.NODE_ENV = dev`环境下的配置信息
@@ -60,7 +60,7 @@ title: 配置 Config
   // src/config/index.prod.conf
   TITLE=Mkbug.js PROD
 
-  // src/controller/index.js
+  // src/controller/ConfigTest.js
   const { BaseController, Config } = require('mkbugjs');
 
   module.exports = class ConfigTest extends BaseController {
@@ -91,7 +91,7 @@ title: 配置 Config
   // 目录结构
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── ConfigTest.js
       ├── config
           ├── index.conf
           ├── index.dev.conf
@@ -104,7 +104,7 @@ title: 配置 Config
   // src/config/index.dev.conf
   TITLE=Mkbug.js DEV
 
-  // src/controller/index.js
+  // src/controller/ConfigTest.js
   const { BaseController, Config } = require('mkbugjs');
 
   module.exports = class ConfigTest extends BaseController {
