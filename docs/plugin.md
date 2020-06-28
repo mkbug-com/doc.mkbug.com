@@ -30,7 +30,6 @@ title: 插件 Plugin
     }
   }
 
-
   // src/controller/index.js
   const { BaseController } = require('mkbugjs');
 
