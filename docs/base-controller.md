@@ -105,7 +105,7 @@ title: 接口 BaseController
 | `request` | 请求抽象接口 | `Object` | 必填 | `Express.Request` |
 | `response` | 响应抽象接口 | `Object` | 必填 | `Express.Response` |
 ### 返回
-`Steing|Buffer|Object|Number`: 正常返回内容<br/>
+`String|Buffer|Object|Number`: 正常返回内容<br/>
 ### 异常
 `MkbugError`: 拒绝请求，返回`405`, `Method not allowed!`，或用户初始化`MkbugError`对象指定的`Status`和返回体。
 
