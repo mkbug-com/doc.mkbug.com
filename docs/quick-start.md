@@ -39,9 +39,9 @@ A OOP style declare Nodejs Web framework base on Express.js
 > *`Notice`：`Mkbugjs`是默认取`src`目录的代码生成对应的`Controller`，因此我们下一步就是创建一个`Controller`.*
 
 ### 创建第一个Controller
-我们只需要在`src/controller`目录下创建一个`index.js`文件并继承`BaseController`类。
+我们只需要在`src/controller`目录下创建一个`HelloWorld.js`文件并继承`BaseController`类。
 ```js
-  // src/controller/index.js
+  // src/controller/HelloWorld.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class HelloWorld extends BaseController {
