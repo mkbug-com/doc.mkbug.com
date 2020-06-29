@@ -15,20 +15,20 @@ title: 逻辑 Logic
 ```js
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── Logic.js
       ├── logic
-          ├── index.js // class TestLogic
+          ├── TestLogic.js // class TestLogic
           ├── TestLogic
-              ├── index1.js // class SubTestLogic1
-              ├── index2.js // class SubTestLogic2
+              ├── SubTestLogic1.js // class SubTestLogic1
+              ├── SubTestLogic2.js // class SubTestLogic2
   ├── index.js 
 ```
-> *Notice：和`BaseController`一样，注入的模块名也是根据类名定义的，会忽略文件名。但是为了结构清晰，大家还是不要像我这么随便起名字。*
+> *Notice：和`BaseController`一样，注入的模块名也是根据类名定义的，所以类名与文件名需要相同。为了结构清晰，大家还是不要像我这么随便起名字。*
 
 ## 实现Logic
 `Logic`其实就是普通的对象模块，可以包含各种属性和方法。
 ```js
-  // src/logic/index.js
+  // src/logic/TestLogic.js
   const { BaseLogic } = require('mkbugjs');
 
   module.exports = class TestLogic extends BaseLogic {
@@ -37,7 +37,7 @@ title: 逻辑 Logic
     }
   }
 
-  // src/logic/TestLogic/index1.js
+  // src/logic/TestLogic/SubTestLogic1.js
   const { BaseLogic } = require('mkbugjs');
 
   module.exports = class SubTestLogic1 extends BaseLogic {
@@ -46,7 +46,7 @@ title: 逻辑 Logic
     }
   }
 
-  // src/logic/TestLogic/index2.js
+  // src/logic/TestLogic/SubTestLogic2.js
   const { BaseLogic } = require('mkbugjs');
 
   module.exports = class SubTestLogic2 extends BaseLogic {
@@ -60,7 +60,7 @@ title: 逻辑 Logic
 ## 使用Logic
 在`Controller`中，开发者可以通过`Logics`对象和`getLogic`方法两种方式访问逻辑对象，`getLogic`主要是为了复杂模块而设计的，可以通过对象属性路径`path`的方式访问指定属性。
 ```js
-  // src/controller/index.js
+  // src/controller/Logic.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class Logic extends BaseController {

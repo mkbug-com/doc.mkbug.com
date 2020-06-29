@@ -97,8 +97,10 @@ title: 接口 BaseController
 ### 异常
 `MkbugError`: 拒绝请求，返回`405`, `Method not allowed!`，或用户初始化`MkbugError`对象指定的`Status`和返回体。
 
-## 接口 (get|head|post|put|delete|connect|options|patch|trace)(Method)(Action)
-请求响应方法
+## 接口 {method}{Name}Action
+请求响应方法<br/>
+`method`: `get|head|post|put|delete|connect|options|patch|trace`<br/>
+`Name`: `api`名称
 ### 参数
 | 参数 | 说明 | 类型 | 必填 | 默认值 |
 | ---- | ---- | ---- | ---- | ---- |

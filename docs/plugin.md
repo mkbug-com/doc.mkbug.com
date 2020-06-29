@@ -16,12 +16,12 @@ title: 插件 Plugin
   // 目录结构
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── Util.js
       ├── plugin
-          ├── index.js
+          ├── TestUtil.js
   ├── index.js 
 
-  // src/plugin/index.js
+  // src/plugin/TestUtil.js
   const { BaseUtil } = require('mkbugjs');
 
   module.exports = class TestUtil extends BaseUtil {
@@ -30,7 +30,7 @@ title: 插件 Plugin
     }
   }
 
-  // src/controller/index.js
+  // src/controller/Util.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class Util extends BaseController {
@@ -60,14 +60,14 @@ title: 插件 Plugin
   // 目录结构
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── Util.js
       ├── plugin
-          ├── index.js
+          ├── TestUtil.js
           ├── DemoUtil
-              ├── index.js
+              ├── TestUtil.js
   ├── index.js 
 
-  // src/plugin/index.js
+  // src/plugin/TestUtil.js
   const { BaseUtil } = require('mkbugjs');
 
   module.exports = class TestUtil extends BaseUtil {
@@ -76,7 +76,7 @@ title: 插件 Plugin
     }
   }
 
-  // src/plugin/DemoUtil/index.js
+  // src/plugin/DemoUtil/TestUtil.js
   const { BaseUtil } = require('mkbugjs');
 
   module.exports = class TestUtil extends BaseUtil {
@@ -85,7 +85,7 @@ title: 插件 Plugin
     }
   }
 
-  // src/controller/index.js
+  // src/controller/Util.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class Util extends BaseController {
@@ -111,14 +111,14 @@ title: 插件 Plugin
   // 目录结构
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── MiddleWare.js
       ├── plugin
-          ├── index.js
-          ├── index1.js
-          ├── index2.js
+          ├── TestMiddleware1.js
+          ├── TestMiddleware2.js
+          ├── TestMiddleware3.js
   ├── index.js 
 
-  // src/plugin/index.js
+  // src/plugin/TestMiddleware1.js
   const { BasePlugin, MkbugError } = require('mkbugjs');
 
   module.exports = class TestMiddleware1 extends BasePlugin {
@@ -129,7 +129,7 @@ title: 插件 Plugin
     }
   }
 
-  // src/plugin/index1.js
+  // src/plugin/TestMiddleware2.js
   const { BasePlugin, MkbugError } = require('mkbugjs');
 
   module.exports = class TestMiddleware2 extends BasePlugin {
@@ -140,7 +140,7 @@ title: 插件 Plugin
     }
   }
 
-  // src/plugin/index3.js
+  // src/plugin/TestMiddleware3.js
   const { BasePlugin } = require('mkbugjs');
 
   module.exports = class TestMiddleware3 extends BasePlugin {
@@ -149,7 +149,7 @@ title: 插件 Plugin
     }
   }
 
-  // src/controller/index.js
+  // src/controller/MiddleWare.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class MiddleWare extends BaseController {

@@ -20,7 +20,7 @@ title: 应用 Mkbug
     .create('/')
     .start(3001)
 
-  // src/controller/index.js
+  // src/controller/HelloWorld.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class HelloWorld extends BaseController {

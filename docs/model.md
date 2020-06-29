@@ -15,29 +15,29 @@ title: 数据 Model
 ```js
   ├── src 
       ├── controller 
-          ├── index.js
+          ├── Model.js
       ├── logic
-          ├── index.js // class TestLogic
+          ├── TestLogic.js // class TestLogic
       ├── model
-          ├── index1.js // class SubTestModel1
-          ├── index2.js // class SubTestModel2
+          ├── SubTestModel1.js // class SubTestModel1
+          ├── SubTestModel2.js // class SubTestModel2
   ├── index.js 
 ```
-> *Notice：和`BaseController`一样，注入的模块名也是根据类名定义的，会忽略文件名。但是为了结构清晰，大家还是不要像我这么随便起名字。*
+> *Notice：和`BaseController`一样，注入的模块名也是根据类名定义的，类名与文件名需要相同。为了结构清晰，大家还是不要像我这么随便起名字。*
 
 ## 实现Logic
 `Logic`其实就是普通的对象模块，可以包含各种属性和方法。
 ```js
-  // src/logic/index.js
+  // src/logic/TestLogic.js
   const { BaseLogic } = require('mkbugjs');
 
   module.exports = class TestLogic extends BaseLogic {
     sayHello1 () {
-      return this.getModel('Test1').sayHello()
+      return this.getModel('SubTestModel1').sayHello()
     }
 
     sayHello2 () {
-      return this.getModel('Test2').sayHello()
+      return this.getModel('SubTestModel2').sayHello()
     }
   }
 ```
@@ -47,19 +47,19 @@ title: 数据 Model
 ## 实现Model
 `Model`也是普通的对象模块，可以包含各种属性和方法。
 ```js
-  // src/model/index1.js
+  // src/model/SubTestModel1.js
   const { BaseModel } = require('mkbugjs');
 
-  module.exports = class Test1 extends BaseModel {
+  module.exports = class SubTestModel1 extends BaseModel {
     sayHello () {
       return 'Hello from Test1'
     }
   }
 
-  // src/model/index2.js
+  // src/model/SubTestModel2.js
   const { BaseModel } = require('mkbugjs');
 
-  module.exports = class Test2 extends BaseModel {
+  module.exports = class SubTestModel2 extends BaseModel {
     sayHello () {
       return 'Hello from Test2'
     }
@@ -69,7 +69,7 @@ title: 数据 Model
 
 ## 实现Controller
 ```js
-  // src/controller/index.js
+  // src/controller/Model.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class Model extends BaseController {

@@ -35,6 +35,7 @@ title: 路由 Controller
 ![](/img/router-controller3.png)
 
 > *Notice：我们有两种方式修改日志输出格式，第一种：自己实现`BaseController`的`after`接口。第二种方法，实现一个继承至`BaseController`的基类，然后所有路由接入层`Controller`都继承至这个新的基类。*
+
 > *Notice：类的方法名必须以`HTTP`协议的`Methods`名开头，`Action`结尾，这样才会被识别为路由信息，具体信息见后面。*
 
 ## 请求接入层
@@ -49,10 +50,10 @@ title: 路由 Controller
   ├── src 
       ├── controller 
           ├── _params
-              ├── index.js
+              ├── ParamsTest1.js
   ├── index.js 
 
-  // src/controller/_parans/index.js
+  // src/controller/_params/ParamsTest1.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class ParamsTest1 extends BaseController {
@@ -80,13 +81,12 @@ title: 路由 Controller
   ├── src 
       ├── controller 
           ├── _params
-              ├── index.js
               ├── _id.js
           ├── pathtest
-              ├── index.js
+              ├── HelloWorld.js
   ├── index.js 
 
-  // src/controller/_parans/_id.js
+  // src/controller/_params/_id.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class IdTest extends BaseController {
@@ -98,6 +98,7 @@ title: 路由 Controller
   const { BaseController } = require('mkbugjs');
 
   module.exports = class HelloWorld extends BaseController {
+    // 为了避免与上面的接口路径冲突，所以在末尾增加了test
     getTestAction () {
       return 'Hello! this message from pathtest/hellowrold!';
     }
@@ -110,16 +111,13 @@ title: 路由 Controller
 ```js
   $ curl -XGET http://localhost:3001/helloworld/idtest
   Hello ! this message from IdTest
-```
 
-我们看到`src/controller/pathtest/index.js`的文件名并不在路由信息中，这是因为`Mkbug.js`是通常情况下忽略文件名，而是以类名为路由信息的。
-```js
   $ curl -XGET http://localhost:3001/pathtest/helloworld/test
   Hello! this message from pathtest/hellowrold!
 ```
 
 ### 类方法名生成规则
-在上例中，我们看到`src/controller/pathtest/index.js`中实现的方法名为`getTestAction`，而生成的路由信息也变成了`http://localhost:3001/pathtest/HelloWorld/test`。
+在上例中，我们看到`src/controller/pathtest/HelloWorld.js`中实现的方法名为`getTestAction`，而生成的路由信息也变成了`http://localhost:3001/pathtest/HelloWorld/test`。
 
 > *Notice：因为`Controller`的方法名是非常关键的配置信息，类的方法名必须以`HTTP`协议的`Methods`名开头`Action`结尾，这样才会被识别为路由信息。如果在`Methods`和`Action`之间没有其它单词，则没有对应的路径。就像上面的例子一样。*
 
@@ -127,7 +125,7 @@ title: 路由 Controller
 
 比如:
 ```js
-  // src/controller/methods.js
+  // src/controller/Methods.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class Methods extends BaseController {
@@ -185,7 +183,7 @@ title: 路由 Controller
 ### 响应状态
 通常由于业务逻辑需要，开发者需要自定义返回的`HTTP STATUS`。而`this.status`可以用于之定义返回的请求状态：
 ```js
-  // src/controller/status.js
+  // src/controller/StatusTest.js
   const { BaseController } = require('mkbugjs');
 
   module.exports = class StatusTest extends BaseController {
@@ -199,6 +197,23 @@ title: 路由 Controller
 ```sh
   $ curl -w "  status=%{http_code}" localhost:3001/statustest/test
   getTestAction  status=401
+```
+
+同时`Mkbug.js`提供了一个全局的`MkbugError`类用于返回各种异常请求状态。只需要抛出一个`MkbugError`即可。返回一个异常请求结果
+```js
+  // src/controller/StatusTest.js
+  const { BaseController, MkbugError } = require('mkbugjs');
+
+  module.exports = class StatusTest extends BaseController {
+    getTestAction () {
+      throw new MkbugError(500, 'Error Test')
+    }
+  }
+```
+执行结果如下：
+```sh
+  $ curl -w "  status=%{http_code}" localhost:3001/statustest/test
+  Error Test  status=500
 ```
 
 ### 请求参数
