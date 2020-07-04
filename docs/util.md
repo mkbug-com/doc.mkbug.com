@@ -1,6 +1,6 @@
 ---
 id: util
-title: 插件 Util
+title: 工具 Util
 ---
 `Mkbug.js`提供工具类`BaseUtil`，主要用于帮助开发者使用`OOP`声明式风格去管理工具函数。
 
