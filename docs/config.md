@@ -121,6 +121,6 @@ title: 配置 Config
   {"TITLE":"Mkbug.js DEV","Content":"A OOP style declare Nodejs Web framework base on Express.js"}
 ```
 
-> *Notice：当我们没有指定具体的运行环境的时候，`Config`会默认加载与初始化参数名相同的`conf`文件，比如`index.js`。但是当指定具体的环境（也就是`process.env.NODE_ENV`）后，将会用对应环境下的同名配置文件内容对默认配置内容进行覆盖。*
+> *Notice：当我们没有指定具体的运行环境的时候，`Config`会默认加载与初始化参数名相同的`conf`文件，比如`index.conf`。但是当指定具体的环境（也就是`process.env.NODE_ENV=dev`）后，将会用对应环境下的同名配置文件内容对默认配置内容进行覆盖。比如本例中`index.dev.conf`的内容会覆盖`index.conf`中相同的key对应的内容。*
 
 > *Notice：由于`Config`是实时解析`conf`文件，所以并不建议每次用的时候进行实例化，而是提前实例化后，在不同的地方读取实例化后的对象。比如创建一个配置信息工厂模块。*
