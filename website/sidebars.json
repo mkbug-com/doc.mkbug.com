@@ -7,7 +7,6 @@
       "controller",
       "config",
       "plugin",
-      "util",
       "logic",
       "model"
     ],
@@ -16,7 +15,6 @@
       "base-controller",
       "base-logic",
       "base-model",
-      "base-util",
       "base-plugin",
       "base-config",
       "base-mkbugerror"

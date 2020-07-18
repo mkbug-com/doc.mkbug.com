@@ -39,23 +39,4 @@ title: 接口 BaseLogic
 | path | 工具类实例的路径 | `String` | 必填 | 无 |
 | def | 默认返回值 | `Object` | 非必填 | null |
 ### 返回
-`BaseUtil`: `Model`对象
-
-## 对象 Utils
-用于获取工具类
-### 参数
-| 参数 | 说明 | 类型 | 必填 | 默认值 |
-| ---- | ---- | ---- | ---- | ---- |
-| 无 | 无 | 无 | 无 | 无 |
-### 返回
-`Object`: `Util`对象
-
-## 方法 getUtil
-用于获取工具类
-### 参数
-| 参数 | 说明 | 类型 | 必填 | 默认值 |
-| ---- | ---- | ---- | ---- | ---- |
-| path | 工具类实例的路径 | `String` | 必填 | 无 |
-| def | 默认返回值 | `Object` | 非必填 | null |
-### 返回
-`BaseUtil`: `Util`对象
+`BaseModel`: `Model`对象
