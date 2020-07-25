@@ -7,14 +7,12 @@
       "controller",
       "config",
       "plugin",
-      "logic",
-      "model"
+      "logic"
     ],
     "API": [
       "base-mkbug",
       "base-controller",
       "base-logic",
-      "base-model",
       "base-plugin",
       "base-config",
       "base-mkbugerror"
