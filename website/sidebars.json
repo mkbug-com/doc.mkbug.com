@@ -6,13 +6,11 @@
       "mkbug",
       "controller",
       "config",
-      "plugin",
-      "logic"
+      "plugin"
     ],
     "API": [
       "base-mkbug",
       "base-controller",
-      "base-logic",
       "base-plugin",
       "base-config",
       "base-mkbugerror"
